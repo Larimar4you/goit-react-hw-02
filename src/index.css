@@ -1,4 +1,20 @@
 /* src/index.css */
+:root {
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Цветовая схема для dark, если нужна */
+  color-scheme: dark;
+  color: whitesmoke;
+  background-color: grey;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 *,
 *::before,
 *::after {
@@ -11,6 +27,12 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
+  /* Если хочешь светлую тему, оставь следующие значения */
+  background-color: #fff;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -69,13 +91,4 @@ a:focus-visible {
 a,
 button {
   transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-/* Базовая стилизация body */
-body {
-  min-height: 100vh;
-  background-color: #fff;
-  color: #000;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
