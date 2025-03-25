@@ -35,10 +35,6 @@ ol {
   list-style: none;
 }
 
-a,
-button {
-  transition: color 0.2s ease;
-}
 button {
   cursor: pointer;
   border: none;

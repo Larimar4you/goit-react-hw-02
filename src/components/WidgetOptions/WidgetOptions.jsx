@@ -12,11 +12,21 @@ const WidgetOptions = ({ setFeedback, totalFeedback }) => {
 
   return (
     <div className={s.container}>
-      <button onClick={() => updateFeedback('good')}>Good</button>
-      <button onClick={() => updateFeedback('neutral')}>Neutral</button>
-      <button onClick={() => updateFeedback('bad')}>Bad</button>
+      <button className={`${s.button} ${s.good}`} onClick={() => updateFeedback('good')}>
+        Good
+      </button>
+      <button className={`${s.button} ${s.neutral}`} onClick={() => updateFeedback('neutral')}>
+        Neutral
+      </button>
+      <button className={`${s.button} ${s.bad}`} onClick={() => updateFeedback('bad')}>
+        Bad
+      </button>
 
-      {totalFeedback > 0 && <button onClick={resetFeedback}>Reset</button>}
+      {totalFeedback > 0 && (
+        <button className={`${s.button} ${s.reset}`} onClick={resetFeedback}>
+          Reset
+        </button>
+      )}
     </div>
   );
 };

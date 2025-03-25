@@ -1,29 +1,45 @@
 .options-container {
   display: flex;
-  justify-content: center;
+
+  align-items: flex-start;
   gap: 10px;
   margin-top: 20px;
-  padding: 10px;
+  padding: 20px;
   border: 2px solid pink;
   border-radius: 10px;
 }
 
 .button {
-  padding: 10px 15px;
+  padding: 12px 20px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-weight: bold;
+  border: 3px solid #333;
+  border-radius: 8px;
   cursor: pointer;
   background-color: #f8f8f8;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: #ccc;
 }
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: #ccc;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button.good:active {
+  background-color: green;
+}
+
+.button.neutral:active {
+  background-color: yellow;
+}
+
+.button.bad:active {
+  background-color: red;
 }
 
 .button.reset {
