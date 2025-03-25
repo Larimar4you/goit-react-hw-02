@@ -15,14 +15,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
   color: inherit;
   margin: 0;
   padding: 0;
-}
+} */
 
 body {
   font-family: sans-serif;
@@ -70,11 +70,11 @@ select {
 }
 
 /* Очищаем стили кнопок */
-button {
+/* button {
   background: none;
   border: none;
   cursor: pointer;
-}
+} */
 
 /* Ссылки без подчеркивания, наследуют цвет, добавляем ховер-фокус */
 a {
