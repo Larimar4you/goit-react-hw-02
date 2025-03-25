@@ -1,11 +1,14 @@
-.container {
+.description-container {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 10px;
 }
 
 .name {
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 10px;
   color: #333;
 }
 
