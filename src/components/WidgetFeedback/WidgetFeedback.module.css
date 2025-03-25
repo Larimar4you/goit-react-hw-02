@@ -1,0 +1,38 @@
+.feedbackContainer {
+  text-align: center;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  margin: 20px auto;
+}
+
+.feedbackItem {
+  font-size: 18px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.feedbackItem span {
+  color: #333;
+}
+
+.feedbackTotal {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.feedbackPositive {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.noFeedback {
+  font-size: 18px;
+  color: #777;
+  text-align: center;
+  margin-top: 10px;
+}
