@@ -30,4 +30,32 @@ const WidgetFeedback = ({ feedback, totalFeedback }) => {
   );
 };
 
+const Options = ({ options, onSelect }) => {
+  return (
+    <div className={s.optionsContainer}>
+      {options.map((option, index) => (
+        <button key={index} onClick={() => onSelect(option)} className={s.optionButton}>
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+const App = () => {
+  const [feedback, setFeedback] = React.useState({ good: 0, neutral: 0, bad: 0 });
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+
+  const handleSelect = option => {
+    setFeedback(prev => ({ ...prev, [option]: prev[option] + 1 }));
+  };
+
+  return (
+    <div className={s.appContainer}>
+      <Options options={['good', 'neutral', 'bad']} onSelect={handleSelect} />
+      <Feedback feedback={feedback} totalFeedback={totalFeedback} />
+    </div>
+  );
+};
+
 export default WidgetFeedback;
