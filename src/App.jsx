@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 import './App.css';
 import WidgetDescription from './components/WidgetDescription/WidgetDescription';
 import WidgetFeedback from './components/WidgetFeedback/WidgetFeedback';
@@ -12,12 +13,18 @@ function App() {
     bad: 0,
   });
 
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+
+  useEffect(() => {
+    localStorage.setItem('feedback', JSON.stringify(feedback));
+  }, [feedback]);
+
   return (
     <>
       <WidgetDescription />
-      <WidgetOptions setFeedback={setFeedback} />
+      <WidgetOptions setFeedback={setFeedback} totalFeedback={totalFeedback} />
 
-      {Object.values(feedback).some(value => value > 0) ? <WidgetFeedback feedback={feedback} /> : <WidgetNotification />}
+      {totalFeedback > 0 ? <WidgetFeedback feedback={feedback} totalFeedback={totalFeedback} /> : <WidgetNotification />}
     </>
   );
 }

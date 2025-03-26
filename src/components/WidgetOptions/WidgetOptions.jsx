@@ -1,29 +1,29 @@
-import React from 'react';
+import { useState } from 'react';
 import s from './WidgetOptions.module.css';
 
 const WidgetOptions = ({ setFeedback, totalFeedback }) => {
-  const updateFeedback = feedbackType => {
-    setFeedback(prev => ({ ...prev, [feedbackType]: prev[feedbackType] + 1 }));
-  };
+  const [activeButton, setActiveButton] = useState(null);
 
-  const resetFeedback = () => {
-    setFeedback({ good: 0, neutral: 0, bad: 0 });
+  const handleClick = option => {
+    setFeedback(prev => ({ ...prev, [option]: prev[option] + 1 }));
+    setActiveButton(option);
+    setTimeout(() => setActiveButton(null), 300);
   };
 
   return (
-    <div className={s.container}>
-      <button className={`${s.button} ${s.good}`} onClick={() => updateFeedback('good')}>
+    <div className={s.optionsContainer}>
+      <button onClick={() => handleClick('good')} className={`${s.button} ${s.good} ${activeButton === 'good' ? s.active : ''}`}>
         Good
       </button>
-      <button className={`${s.button} ${s.neutral}`} onClick={() => updateFeedback('neutral')}>
+      <button onClick={() => handleClick('neutral')} className={`${s.button} ${s.neutral} ${activeButton === 'neutral' ? s.active : ''}`}>
         Neutral
       </button>
-      <button className={`${s.button} ${s.bad}`} onClick={() => updateFeedback('bad')}>
+      <button onClick={() => handleClick('bad')} className={`${s.button} ${s.bad} ${activeButton === 'bad' ? s.active : ''}`}>
         Bad
       </button>
 
       {totalFeedback > 0 && (
-        <button className={`${s.button} ${s.reset}`} onClick={resetFeedback}>
+        <button onClick={() => setFeedback({ good: 0, neutral: 0, bad: 0 })} className={s.reset}>
           Reset
         </button>
       )}

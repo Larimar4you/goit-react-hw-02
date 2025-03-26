@@ -1,51 +1,62 @@
-.options-container {
+.optionsContainer {
   display: flex;
-
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
-  margin-top: 20px;
-  padding: 20px;
-  border: 2px solid pink;
-  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 20px;
   font-size: 16px;
   font-weight: bold;
-  border: 3px solid #333;
+  width: 100px; /* Делаем шире, чтобы текст влез */
+  height: 40px;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #f8f8f8;
   transition: all 0.3s;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: grey;
+  color: black;
+  text-align: center;
 }
 
-.button:hover {
-  background-color: #ccc;
+.button.good {
+  background-color: green;
+}
+.button.neutral {
+  background-color: yellow;
+  margin-left: 15px;
+}
+.button.bad {
+  background-color: red;
+  margin-left: 15px;
 }
 
-.button:active {
-  background-color: #ccc;
+.active {
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.button.good:active {
-  background-color: green;
+.reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 15px;
+
+  background-color: darkred;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
 
-.button.neutral:active {
-  background-color: yellow;
-}
-
-.button.bad:active {
+.reset:hover {
   background-color: red;
-}
-
-.button.reset {
-  background-color: #f44336;
-}
-
-.button.reset:hover {
-  background-color: #d32f2f;
 }

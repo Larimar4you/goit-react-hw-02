@@ -1,6 +1,9 @@
 .message {
-  font-size: 18px;
-  color: #555;
-  align-items: flex-start;
-  margin-top: 20px;
+  text-align: left;
+  font-weight: 300;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: black;
 }

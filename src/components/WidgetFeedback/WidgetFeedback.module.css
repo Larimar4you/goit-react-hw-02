@@ -1,21 +1,28 @@
 .feedbackContainer {
-  text-align: center;
-  background: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 320px;
   margin: 20px auto;
+  padding: 20px;
+  max-width: 320px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .feedbackItem {
-  font-size: 18px;
-  margin: 5px 0;
   font-weight: bold;
-}
-
-.feedbackItem span {
-  color: #333;
+  font-size: 18 px;
+  color: black;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
 .feedbackTotal {
@@ -23,13 +30,11 @@
   font-weight: bold;
   margin-top: 10px;
 }
-
 .feedbackPositive {
   font-size: 20px;
   font-weight: bold;
   color: #4caf50;
 }
-
 .noFeedback {
   font-size: 18px;
   color: #777;
