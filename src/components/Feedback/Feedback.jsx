@@ -1,9 +1,7 @@
 // import React from 'react';
 import s from './Feedback.module.css';
 
-const Feedback = ({ feedback, totalFeedback }) => {
-  const positiveFeedback = totalFeedback ? Math.round((feedback.good / totalFeedback) * 100) : 0;
-
+const Feedback = ({ feedback, totalFeedback, positiveFeedback }) => {
   return (
     <div className={s.feedbackContainer}>
       <ul className={s.list}>

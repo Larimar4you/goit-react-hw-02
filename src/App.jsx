@@ -7,11 +7,18 @@ import Notification from './components/Notification/Notification';
 import Options from './components/Options/Options';
 
 function App() {
-  const [feedback, setFeedback] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  });
+  const getInitialState = () => {
+    const saveFeedback = localStorage.getItem('feedback');
+    return saveFeedback
+      ? JSON.parse(saveFeedback)
+      : {
+          good: 0,
+          neutral: 0,
+          bad: 0,
+        };
+  };
+
+  const [feedback, setFeedback] = useState(getInitialState);
 
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
@@ -19,12 +26,13 @@ function App() {
     localStorage.setItem('feedback', JSON.stringify(feedback));
   }, [feedback]);
 
+  const positiveFeedback = totalFeedback ? Math.round((feedback.good / totalFeedback) * 100) : 0;
   return (
     <>
       <Description />
       <Options setFeedback={setFeedback} totalFeedback={totalFeedback} />
 
-      {totalFeedback > 0 ? <Feedback feedback={feedback} totalFeedback={totalFeedback} /> : <Notification />}
+      {totalFeedback > 0 ? <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} /> : <Notification />}
     </>
   );
 }
