@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <Description />
-      <Options setFeedback={setFeedback} totalFeedback={totalFeedback} />
+      <Options setFeedback={setFeedback} totalFeedback={totalFeedback} onReset={() => setFeedback({ good: 0, neutral: 0, bad: 0 })} />
 
       {totalFeedback > 0 ? <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} /> : <Notification />}
     </>

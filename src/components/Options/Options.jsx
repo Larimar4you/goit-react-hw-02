@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import s from './Options.module.css';
 
-const Options = ({ setFeedback, totalFeedback }) => {
+const Options = ({ setFeedback, totalFeedback, onReset }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleClick = option => {
@@ -23,7 +23,7 @@ const Options = ({ setFeedback, totalFeedback }) => {
       </button>
 
       {totalFeedback > 0 && (
-        <button onClick={() => setFeedback({ good: 0, neutral: 0, bad: 0 })} className={s.reset}>
+        <button onClick={onReset} className={s.reset}>
           Reset
         </button>
       )}
