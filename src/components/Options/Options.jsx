@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import s from './WidgetOptions.module.css';
+import s from './Options.module.css';
 
 const Options = ({ setFeedback, totalFeedback }) => {
   const [activeButton, setActiveButton] = useState(null);
