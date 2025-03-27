@@ -1,5 +1,5 @@
 import { descriptionTitle, descriptionText } from './Description.module.css';
-const WidgetDescription = () => {
+const Description = () => {
   return (
     <>
       <h1 className={descriptionTitle}>Sip Happens Café</h1>
