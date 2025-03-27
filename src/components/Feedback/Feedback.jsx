@@ -1,7 +1,7 @@
 // import React from 'react';
-import s from './WidgetFeedback.module.css';
+import s from './Feedback.module.css';
 
-const WidgetFeedback = ({ feedback, totalFeedback }) => {
+const Feedback = ({ feedback, totalFeedback }) => {
   const positiveFeedback = totalFeedback ? Math.round((feedback.good / totalFeedback) * 100) : 0;
 
   return (
@@ -26,4 +26,4 @@ const WidgetFeedback = ({ feedback, totalFeedback }) => {
   );
 };
 
-export default WidgetFeedback;
+export default Feedback;

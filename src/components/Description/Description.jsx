@@ -1,4 +1,4 @@
-import { descriptionTitle, descriptionText } from './WidgetDescription.module.css';
+import { descriptionTitle, descriptionText } from './Description.module.css';
 const WidgetDescription = () => {
   return (
     <>
@@ -8,4 +8,4 @@ const WidgetDescription = () => {
   );
 };
 
-export default WidgetDescription;
+export default Description;

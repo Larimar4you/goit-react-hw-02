@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import s from './WidgetOptions.module.css';
 
-const WidgetOptions = ({ setFeedback, totalFeedback }) => {
+const Options = ({ setFeedback, totalFeedback }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleClick = option => {
@@ -31,4 +31,4 @@ const WidgetOptions = ({ setFeedback, totalFeedback }) => {
   );
 };
 
-export default WidgetOptions;
+export default Options;

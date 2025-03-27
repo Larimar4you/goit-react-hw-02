@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
 import './App.css';
-import WidgetDescription from './components/WidgetDescription/WidgetDescription';
-import WidgetFeedback from './components/WidgetFeedback/WidgetFeedback';
-import WidgetNotification from './components/WidgetNotification/WidgetNotification';
-import WidgetOptions from './components/WidgetOptions/WidgetOptions';
+import Description from './components/Description/Description';
+import Feedback from './components/Feedback/Feedback';
+import Notification from './components/Notification/Notification';
+import Options from './components/Options/Options';
 
 function App() {
   const [feedback, setFeedback] = useState({
@@ -21,10 +21,10 @@ function App() {
 
   return (
     <>
-      <WidgetDescription />
-      <WidgetOptions setFeedback={setFeedback} totalFeedback={totalFeedback} />
+      <Description />
+      <Options setFeedback={setFeedback} totalFeedback={totalFeedback} />
 
-      {totalFeedback > 0 ? <WidgetFeedback feedback={feedback} totalFeedback={totalFeedback} /> : <WidgetNotification />}
+      {totalFeedback > 0 ? <Feedback feedback={feedback} totalFeedback={totalFeedback} /> : <Notification />}
     </>
   );
 }
