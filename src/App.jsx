@@ -35,13 +35,18 @@ function App() {
   }, [feedback]);
 
   const positiveFeedback = totalFeedback ? Math.round((feedback.good / totalFeedback) * 100) : 0;
+
   return (
     <>
       <Description />
 
       <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} onReset={resetFeedback} />
 
-      {totalFeedback > 0 ? <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} /> : <Notification />}
+      {totalFeedback > 0 ? (
+        <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} />
+      ) : (
+        <Notification message='no feedback yet... :)' />
+      )}
     </>
   );
 }

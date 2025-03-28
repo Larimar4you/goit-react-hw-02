@@ -1,9 +1,10 @@
 .message {
-  text-align: left;
-  font-weight: 300;
+  text-align: center;
+  /* text-transform: uppercase; */
+  font-weight: bold;
   margin-bottom: 20px;
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 1.4;
   letter-spacing: 0.03em;
   color: black;
 }
