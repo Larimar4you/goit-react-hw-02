@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import s from './Options.module.css';
 
-const Options = ({ setFeedback, totalFeedback, onReset }) => {
+const Options = ({ updateFeedback, totalFeedback, onReset }) => {
   const [activeButton, setActiveButton] = useState(null);
 
   const handleClick = option => {
-    setFeedback(prev => ({ ...prev, [option]: prev[option] + 1 }));
+    updateFeedback(option);
     setActiveButton(option);
     setTimeout(() => setActiveButton(null), 300);
   };
